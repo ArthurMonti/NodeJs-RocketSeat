@@ -45,7 +45,7 @@ app.post("/account", (req, res) =>{
 
   if(customerAlreadyExists)
     return res.status(400).json({ 
-      error: "Customer already existis!"
+      error: "Customer already exist!"
     });
 
   const id = uuidv4();
@@ -134,7 +134,7 @@ app.put("/account", verifyIfExistsAccountCPF, (req,res) =>{
 app.get("/account", verifyIfExistsAccountCPF, (req,res) =>{
   const{ customer } = req;
 
-  return req.json(customer);
+  return res.json(customer);
 })
 
 app.delete("/account", verifyIfExistsAccountCPF, (req,res) =>{
@@ -142,7 +142,7 @@ app.delete("/account", verifyIfExistsAccountCPF, (req,res) =>{
 
   customers.splice(customer, 1);
 
-  return req.status(200).json(customers);
+  return res.status(200).json(customers);
 })
 
 app.get("/balance", verifyIfExistsAccountCPF, (req,res) =>{
