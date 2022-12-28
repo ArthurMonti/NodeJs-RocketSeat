@@ -1,0 +1,45 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "RocketSeat Chapter 2",
+    "description": "This is an API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/categories": {
+      "post": {
+        "summary": "Create a category",
+        "descrption": "Create a new category",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name":{
+                    "type": "string"
+                  },
+                  "descrption":{
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": "CategoryTest",
+                  "description": "Descrption Test"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Category already exists!"
+          }
+        }
+      }
+    }
+  }
+}

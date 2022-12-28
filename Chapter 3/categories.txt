@@ -1,0 +1,3 @@
+Categoria 1, Descrição 1
+Categoria 2, Descrição 2
+Category, Description Category
