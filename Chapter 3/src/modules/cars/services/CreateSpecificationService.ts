@@ -1,3 +1,4 @@
+import { AppError } from "../../../errors/AppError";
 import { ISpecificationsRepository } from "../repositories/ISpecificationsRepository";
 
 interface IRequest {
@@ -12,7 +13,7 @@ class CreateSpecificationService {
       this.specificationsRepository.findByName(name);
 
     if (specificationAlreadyExists) {
-      throw new Error("Specification alread exists!");
+      throw new AppError("Specification alread exists!");
     }
     this.specificationsRepository.create({ name, description });
   }
